@@ -34,7 +34,7 @@ export interface NavLink { href: string; label: string; icon: IconName }
 export const NAV_LINKS: readonly NavLink[] = [
   { href: "#inicio", label: "Inicio", icon: "home" },
   { href: "#servicios", label: "Servicios", icon: "wrench" },
-  { href: "#contacto", label: "Ubicación", icon: "pin" },
+  { href: "#ubicacion", label: "Ubicación", icon: "pin" },
 ];
 
 // Mismos íconos que la sección Servicios para el mismo concepto (pantalla, batería, software, carga).
@@ -85,12 +85,24 @@ export const FAQ: readonly FaqItem[] = [
 export const REVIEWS_NOTICE =
   "Estamos empezando y queremos que cada opinión sea real. Cuando tengamos las primeras reseñas de nuestros clientes, las vas a ver acá.";
 
+export type StarRating = 1 | 2 | 3 | 4 | 5;
+export interface Testimonial { author: string; text: string; rating: StarRating }
+
+// Solo reseñas reales de clientes que aceptaron publicarlas: inventarlas es publicidad engañosa. Vacío → REVIEWS_NOTICE.
+export const TESTIMONIALS: readonly Testimonial[] = [];
+
+export const WORKSHOP_AREA = "Godoy Cruz, Mendoza";
+export const WORKSHOP_NOTE = "Sin local abierto al público: coordinamos antes por WhatsApp.";
+// Embed clásico (output=embed): no requiere API key. Centrado en la zona, no en una dirección, porque no hay local a la calle.
+export const WORKSHOP_MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(WORKSHOP_AREA)}&z=13&output=embed`;
+// Formato oficial de Maps URLs: abre la app de Google Maps en móvil y la web en escritorio.
+export const WORKSHOP_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(WORKSHOP_AREA)}`;
+
 export const CONTACT_INTRO = "Contanos qué le pasa a tu equipo y te pasamos un presupuesto sin cargo.";
 
 export interface ContactInfoItem { icon: IconName; label: string; lines: readonly string[]; href?: string }
 
 export const CONTACT_INFO: readonly ContactInfoItem[] = [
   { icon: "phone", label: "WhatsApp", lines: [`${PHONE_DISPLAY} (Uriel Vega)`], href: WHATSAPP_URL },
-  { icon: "pin", label: "Taller", lines: ["Godoy Cruz, Mendoza", "Sin local abierto al público: coordinamos antes por WhatsApp."] },
   { icon: "at", label: "Instagram", lines: [INSTAGRAM_HANDLE], href: INSTAGRAM_URL },
 ];

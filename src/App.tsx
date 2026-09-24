@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
+import { ContactMap } from "./components/ContactMap";
 import { DiagnosticWizard } from "./components/DiagnosticWizard";
 import { Faq } from "./components/Faq";
 import { Hero } from "./components/Hero";
@@ -31,6 +32,7 @@ export function App() {
         <Process />
         <About />
         <Faq />
+        <ContactMap />
         <Contact />
       </main>
       <SiteFooter className="md:pl-20" />

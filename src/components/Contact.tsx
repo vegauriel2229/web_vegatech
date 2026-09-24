@@ -1,6 +1,6 @@
 // src/components/Contact.tsx
 import { motion } from "framer-motion";
-import { CONTACT_INFO, CONTACT_INTRO, REVIEWS_NOTICE, WHATSAPP_URL } from "../lib/content";
+import { CONTACT_INFO, CONTACT_INTRO, WHATSAPP_URL } from "../lib/content";
 import { cn } from "../lib/cn";
 import { IconBadge } from "./Icon";
 import { Section, cardSurface } from "./Section";
@@ -9,7 +9,7 @@ export function Contact() {
   return (
     <Section id="contacto" title="Contacto" intro={CONTACT_INTRO}>
       <div className="grid gap-4 md:grid-cols-2">
-        <dl className="grid gap-4 sm:grid-cols-2 md:col-span-2 md:grid-cols-3">
+        <dl className="grid gap-4 sm:grid-cols-2">
           {CONTACT_INFO.map(({ icon, label, lines, href }) => (
             <div key={label} className={cn(cardSurface, "p-5")}>
               <IconBadge name={icon} className="size-9 rounded-xl" />
@@ -35,7 +35,6 @@ export function Contact() {
         >
           Escribinos por WhatsApp
         </motion.a>
-        <p className="rounded-3xl border border-dashed border-slate-700 p-6 text-sm text-slate-400">{REVIEWS_NOTICE}</p>
       </div>
     </Section>
   );

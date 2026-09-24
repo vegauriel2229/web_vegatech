@@ -19,6 +19,11 @@
   @keyframes circuit {
     to { stroke-dashoffset: -100; }
   }
+  /* Solo el pico, como neon: 0% y 100% toman la sombra estática del FAB de WhatsApp. */
+  --animate-whatsapp-glow: whatsapp-glow 2s ease-in-out infinite;
+  @keyframes whatsapp-glow {
+    50% { box-shadow: 0 0 36px rgba(37, 211, 102, 0.85); }
+  }
 }
 
 html {
