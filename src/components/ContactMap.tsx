@@ -3,7 +3,7 @@ import { motion, type Variants } from "framer-motion";
 import { ExternalLink, Star } from "lucide-react";
 import { cn } from "../lib/cn";
 import {
-  REVIEWS_NOTICE, TESTIMONIALS, WORKSHOP_AREA, WORKSHOP_MAP_EMBED_URL, WORKSHOP_MAPS_URL, WORKSHOP_NOTE,
+  GOOGLE_REVIEW_URL, REVIEWS_NOTICE, TESTIMONIALS, WORKSHOP_AREA, WORKSHOP_MAP_EMBED_URL, WORKSHOP_MAPS_URL, WORKSHOP_NOTE,
   type StarRating, type Testimonial,
 } from "../lib/content";
 import { IconBadge } from "./Icon";
@@ -80,6 +80,16 @@ function CustomerReviews() {
           ))}
         </motion.ul>
       )}
+      <a
+        href={GOOGLE_REVIEW_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-slate-700"
+      >
+        <Star size={16} aria-hidden="true" className="fill-amber-400 text-amber-400" />
+        Calificanos en Google
+      </a>
+      <p className="mt-2 text-center text-[10px] text-slate-500">Tu opinión nos ayuda a seguir creciendo en Godoy Cruz.</p>
     </div>
   );
 }

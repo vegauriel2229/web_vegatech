@@ -90,6 +90,8 @@ export interface Testimonial { author: string; text: string; rating: StarRating 
 
 // Solo reseñas reales de clientes que aceptaron publicarlas: inventarlas es publicidad engañosa. Vacío → REVIEWS_NOTICE.
 export const TESTIMONIALS: readonly Testimonial[] = [];
+// PLACEHOLDER: reemplazar por el link de reseñas del Perfil de Empresa de Google. Hasta entonces el botón lleva a un 404.
+export const GOOGLE_REVIEW_URL = "https://g.page/r/TU_ENLACE_DE_RESEÑAS";
 
 export const WORKSHOP_AREA = "Godoy Cruz, Mendoza";
 export const WORKSHOP_NOTE = "Sin local abierto al público: coordinamos antes por WhatsApp.";
