@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "node scripts/check-schedule.ts"
+    "test": "node scripts/check-schedule.ts && node scripts/check-whatsapp.ts"
   },
   "repository": {
     "type": "git",

@@ -1,11 +1,13 @@
 // src/components/Hero.tsx
 import { motion } from "framer-motion";
+import { ArrowRight, Cpu } from "lucide-react";
 import { LOGO_URL, WHATSAPP_URL } from "../lib/content";
+import { CircuitButton } from "./CircuitButton";
 import { QuickStatus } from "./QuickStatus";
 
-interface HeroProps { imageUrl: string }
+interface HeroProps { imageUrl: string; onStartDiagnosis: () => void }
 
-export function Hero({ imageUrl }: HeroProps) {
+export function Hero({ imageUrl, onStartDiagnosis }: HeroProps) {
   return (
     <section className="px-4 pt-4">
       <div className="relative mx-auto flex min-h-[600px] w-full max-w-[1400px] flex-col overflow-hidden rounded-[48px] border border-slate-800 bg-slate-900 shadow-[0_40px_100px_-20px_rgba(217,70,239,0.15)]">
@@ -38,22 +40,29 @@ export function Hero({ imageUrl }: HeroProps) {
               VEGATECH
             </span>
           </div>
-          <h1 className="font-display text-[42px] font-medium leading-[1.1] tracking-tight text-white md:text-[56px]">
-            Expertos en tu<br />dispositivo móvil
+          <h1 className="font-display text-[42px] font-medium leading-[1.1] tracking-tight text-balance text-white md:text-[56px]">
+            Expertos en tu <br className="hidden md:block" /> dispositivo móvil
           </h1>
           <p className="mt-4 max-w-md text-base text-slate-300 md:text-lg">
             Servicio técnico especializado en hardware y software para smartphones. Diagnóstico preciso, reparaciones rápidas y flasheos para Android y iPhone.
           </p>
-          <motion.a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="mt-8 inline-block rounded-full bg-fuchsia-600 px-6 py-2.5 font-medium text-white! no-underline shadow-[0_0_20px_rgba(217,70,239,0.4)] transition-[background-color,box-shadow] duration-300 hover:bg-fuchsia-500 hover:shadow-[0_0_30px_-5px_rgba(217,70,239,0.6)]"
-          >
-            Contactar Ahora
-          </motion.a>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <motion.a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-block rounded-full bg-fuchsia-600 px-6 py-2.5 font-medium text-white! no-underline shadow-[0_0_20px_rgba(217,70,239,0.4)] transition-[background-color,box-shadow] duration-300 hover:bg-fuchsia-500 hover:shadow-[0_0_30px_-5px_rgba(217,70,239,0.6)]"
+            >
+              Contactar Ahora
+            </motion.a>
+            <CircuitButton onClick={onStartDiagnosis} aria-haspopup="dialog">
+              <Cpu size={20} aria-hidden="true" className="text-cyan-400" />
+              Iniciá un Diagnóstico Inteligente
+              <ArrowRight size={18} aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1" />
+            </CircuitButton>
+          </div>
           <QuickStatus className="mt-12" />
         </motion.div>
       </div>

@@ -1,9 +1,10 @@
 // src/lib/content.ts
 // Cada dato vive en un solo lugar: si un texto aparece en pantalla dos veces, se define acá una sola vez.
 import type { ScheduleSlot } from "./schedule";
+import { buildWhatsAppUrl } from "./whatsapp";
 
-export const WHATSAPP_URL =
-  "https://wa.me/5492617759046?text=Hola%20Vegatech%2C%20quiero%20consultar%20por%20la%20reparaci%C3%B3n%20de%20mi%20celular.";
+export const WHATSAPP_NUMBER = "5492617759046";
+export const WHATSAPP_URL = buildWhatsAppUrl(WHATSAPP_NUMBER, "Hola Vegatech, quiero consultar por la reparación de mi celular.");
 export const INSTAGRAM_URL = "https://instagram.com/vegatech.reparaciones";
 export const INSTAGRAM_HANDLE = "@vegatech.reparaciones";
 export const PHONE_DISPLAY = "261 775-9046";
@@ -20,18 +21,22 @@ export const SCHEDULE: readonly ScheduleSlot[] = [
 export type IconName =
   | "screen" | "battery" | "plug" | "cpu" | "wrench"
   | "chat" | "quote" | "calendar" | "check"
-  | "phone" | "pin" | "at";
+  | "phone" | "pin" | "at"
+  | "scan" | "devices";
 
 export interface TitledItem { icon: IconName; title: string; text: string }
 export interface FaqItem { question: string; answer: string }
 
-export const MARQUEE_SERVICES: readonly string[] = [
-  "Reparación de Pantallas",
-  "Cambio de Baterías",
-  "Flasheo de Software",
-  "Diagnóstico de Hardware",
-  "Módulos de Carga",
-  "Servicio Android/iPhone",
+export interface MarqueeItem { label: string; icon: IconName }
+
+// Mismos íconos que la sección Servicios para el mismo concepto (pantalla, batería, software, carga).
+export const MARQUEE_SERVICES: readonly MarqueeItem[] = [
+  { label: "Reparación de Pantallas", icon: "screen" },
+  { label: "Cambio de Baterías", icon: "battery" },
+  { label: "Flasheo de Software", icon: "cpu" },
+  { label: "Diagnóstico de Hardware", icon: "scan" },
+  { label: "Módulos de Carga", icon: "plug" },
+  { label: "Servicio Android/iPhone", icon: "devices" },
 ];
 
 export const SERVICES_INTRO =

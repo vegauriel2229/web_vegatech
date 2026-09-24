@@ -14,12 +14,24 @@
   @keyframes neon {
     50% { text-shadow: 0 0 6px var(--color-fuchsia-300), 0 0 20px var(--color-fuchsia-500), 0 0 44px var(--color-fuchsia-500); }
   }
+  /* Una vuelta completa al perímetro: el <rect> usa pathLength=100. */
+  --animate-circuit: circuit 4s linear infinite;
+  @keyframes circuit {
+    to { stroke-dashoffset: -100; }
+  }
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 16px;
   color-scheme: dark;
+  /* Reserva el canal de la barra: al bloquear el scroll con el modal abierto, la página no salta de ancho. */
+  scrollbar-gutter: stable;
+}
+
+/* <dialog> nativo no bloquea el scroll de fondo: se resuelve en CSS sin estado en JS. */
+html:has(dialog[open]) {
+  overflow: hidden;
 }
 
 body {
@@ -30,9 +42,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-:focus-visible {
-  outline: 2px solid var(--color-cyan-400);
-  outline-offset: 3px;
+/* En @layer base para que utilidades como focus:outline-none puedan anularlo: CSS sin capa les gana a todas. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-cyan-400);
+    outline-offset: 3px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
