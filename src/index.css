@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", "Inter", system-ui, sans-serif;
+  --animate-marquee: marquee 35s linear infinite;
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  --text-shadow-neon: 0 0 4px var(--color-fuchsia-300), 0 0 12px var(--color-fuchsia-500), 0 0 28px var(--color-fuchsia-600);
+  --animate-neon: neon 3s ease-in-out infinite;
+  /* Solo el pico: 0% y 100% toman el text-shadow-neon estático del elemento. */
+  @keyframes neon {
+    50% { text-shadow: 0 0 6px var(--color-fuchsia-300), 0 0 20px var(--color-fuchsia-500), 0 0 44px var(--color-fuchsia-500); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 16px;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #020617;
+  color: #e2e8f0;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cyan-400);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

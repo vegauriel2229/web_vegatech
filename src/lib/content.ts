@@ -1,0 +1,83 @@
+// src/lib/content.ts
+// Cada dato vive en un solo lugar: si un texto aparece en pantalla dos veces, se define acá una sola vez.
+import type { ScheduleSlot } from "./schedule";
+
+export const WHATSAPP_URL =
+  "https://wa.me/5492617759046?text=Hola%20Vegatech%2C%20quiero%20consultar%20por%20la%20reparaci%C3%B3n%20de%20mi%20celular.";
+export const INSTAGRAM_URL = "https://instagram.com/vegatech.reparaciones";
+export const INSTAGRAM_HANDLE = "@vegatech.reparaciones";
+export const PHONE_DISPLAY = "261 775-9046";
+export const HERO_IMAGE_URL = "/hero-phone-bg.jpg";
+// Misma URL que el favicon: el navegador la reutiliza de caché.
+export const LOGO_URL = "/assets/logo-256.png";
+
+export const BUSINESS_TIME_ZONE = "America/Argentina/Mendoza";
+export const SCHEDULE: readonly ScheduleSlot[] = [
+  { label: "Lun - Vie", days: ["Mon", "Tue", "Wed", "Thu", "Fri"], openHour: 9, closeHour: 19 },
+  { label: "Sáb - Dom", days: ["Sat", "Sun"], openHour: 10, closeHour: 14 },
+];
+
+export type IconName =
+  | "screen" | "battery" | "plug" | "cpu" | "wrench"
+  | "chat" | "quote" | "calendar" | "check"
+  | "phone" | "pin" | "at";
+
+export interface TitledItem { icon: IconName; title: string; text: string }
+export interface FaqItem { question: string; answer: string }
+
+export const MARQUEE_SERVICES: readonly string[] = [
+  "Reparación de Pantallas",
+  "Cambio de Baterías",
+  "Flasheo de Software",
+  "Diagnóstico de Hardware",
+  "Módulos de Carga",
+  "Servicio Android/iPhone",
+];
+
+export const SERVICES_INTRO =
+  "Si tu equipo tiene un problema que no ves acá, escribinos igual: lo revisamos y te decimos si tiene arreglo.";
+
+export const SERVICES: readonly TitledItem[] = [
+  { icon: "screen", title: "Pantalla rota o con fallas", text: "Cambio de pantalla y táctil." },
+  { icon: "battery", title: "Batería que no dura", text: "Si dura poco, se calienta o se apaga sola." },
+  { icon: "plug", title: "No carga", text: "Puerto de carga: cuando hay que mover el cable para que cargue." },
+  { icon: "cpu", title: "Lento o no enciende bien", text: "Software: equipos que se traban o fallan al iniciar." },
+  { icon: "wrench", title: "Cámara, altavoz, botones", text: "Micrófono y otras fallas. Consultanos." },
+];
+
+export const STEPS: readonly TitledItem[] = [
+  { icon: "chat", title: "Contanos qué le pasa", text: "Escribinos por WhatsApp con el modelo y una descripción del problema. Si podés, mandá una foto." },
+  { icon: "quote", title: "Recibí tu presupuesto", text: "Te lo pasamos sin cargo, antes de empezar." },
+  { icon: "calendar", title: "Coordinamos la entrega", text: "Acordamos por el mismo chat cómo y cuándo dejar el equipo." },
+  { icon: "check", title: "Reparamos y te avisamos", text: "Te mantenemos al tanto hasta que tu equipo esté listo." },
+];
+
+export const ABOUT_PARAGRAPHS: readonly string[] = [
+  "Vegatech es un servicio técnico de celulares de Godoy Cruz, Mendoza. Estamos en etapa de crecimiento y trabajamos con un compromiso claro: un servicio serio, transparente y de confianza.",
+  "La atención está a cargo de Uriel Vega, responsable de Vegatech, para que cada consulta tenga un trato directo y personalizado.",
+];
+
+export const ABOUT_POINTS: readonly string[] = [
+  "Atención personalizada, sin intermediarios",
+  "Explicaciones claras, sin tecnicismos innecesarios",
+];
+
+export const FAQ: readonly FaqItem[] = [
+  { question: "¿Cuánto cuesta la reparación?", answer: "Depende del equipo y de los repuestos disponibles en ese momento. Te pasamos el valor exacto en el presupuesto." },
+  { question: "¿Cuánto tarda?", answer: "Muchas reparaciones se resuelven en el día. El tiempo exacto depende de si tenemos el repuesto disponible; te lo confirmamos junto con el presupuesto." },
+  { question: "¿Qué garantía tiene?", answer: "Consultanos por la garantía de tu reparación y te contamos." },
+  { question: "¿Reparan mi marca de celular?", answer: "Sí, trabajamos con todas las marcas y modelos, Android y iPhone. Escribinos con el modelo y lo revisamos." },
+];
+
+export const REVIEWS_NOTICE =
+  "Estamos empezando y queremos que cada opinión sea real. Cuando tengamos las primeras reseñas de nuestros clientes, las vas a ver acá.";
+
+export const CONTACT_INTRO = "Contanos qué le pasa a tu equipo y te pasamos un presupuesto sin cargo.";
+
+export interface ContactInfoItem { icon: IconName; label: string; lines: readonly string[]; href?: string }
+
+export const CONTACT_INFO: readonly ContactInfoItem[] = [
+  { icon: "phone", label: "WhatsApp", lines: [`${PHONE_DISPLAY} (Uriel Vega)`], href: WHATSAPP_URL },
+  { icon: "pin", label: "Taller", lines: ["Godoy Cruz, Mendoza", "Sin local abierto al público: coordinamos antes por WhatsApp."] },
+  { icon: "at", label: "Instagram", lines: [INSTAGRAM_HANDLE], href: INSTAGRAM_URL },
+];

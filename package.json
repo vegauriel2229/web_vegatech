@@ -1,0 +1,40 @@
+{
+  "name": "vegatech",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "node scripts/check-schedule.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vegauriel2229/web_vegatech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/vegauriel2229/web_vegatech/issues"
+  },
+  "homepage": "https://github.com/vegauriel2229/web_vegatech#readme",
+  "private": true,
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^13.4.2",
+    "lucide-react": "^1.47.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  }
+}
