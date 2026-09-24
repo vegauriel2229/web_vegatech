@@ -1,6 +1,6 @@
 // src/components/Icon.tsx
 import {
-  AtSign, BatteryCharging, CalendarCheck, Check, Cpu, FileText,
+  AtSign, BatteryCharging, CalendarCheck, Check, Cpu, FileText, Home,
   MapPin, MessageCircle, Phone, PlugZap, ScanSearch, Smartphone, TabletSmartphone, Wrench, type LucideIcon,
 } from "lucide-react";
 import { cn } from "../lib/cn";
@@ -10,7 +10,7 @@ export const ICONS: Record<IconName, LucideIcon> = {
   screen: Smartphone, battery: BatteryCharging, plug: PlugZap, cpu: Cpu, wrench: Wrench,
   chat: MessageCircle, quote: FileText, calendar: CalendarCheck, check: Check,
   phone: Phone, pin: MapPin, at: AtSign,
-  scan: ScanSearch, devices: TabletSmartphone,
+  scan: ScanSearch, devices: TabletSmartphone, home: Home,
 };
 
 interface IconBadgeProps { name: IconName; className?: string }

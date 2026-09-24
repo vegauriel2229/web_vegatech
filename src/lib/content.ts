@@ -22,12 +22,20 @@ export type IconName =
   | "screen" | "battery" | "plug" | "cpu" | "wrench"
   | "chat" | "quote" | "calendar" | "check"
   | "phone" | "pin" | "at"
-  | "scan" | "devices";
+  | "scan" | "devices" | "home";
 
 export interface TitledItem { icon: IconName; title: string; text: string }
 export interface FaqItem { question: string; answer: string }
 
 export interface MarqueeItem { label: string; icon: IconName }
+export interface NavLink { href: string; label: string; icon: IconName }
+
+// Compartido por Sidebar (md+) y MobileNav (< md).
+export const NAV_LINKS: readonly NavLink[] = [
+  { href: "#inicio", label: "Inicio", icon: "home" },
+  { href: "#servicios", label: "Servicios", icon: "wrench" },
+  { href: "#contacto", label: "Ubicación", icon: "pin" },
+];
 
 // Mismos íconos que la sección Servicios para el mismo concepto (pantalla, batería, software, carga).
 export const MARQUEE_SERVICES: readonly MarqueeItem[] = [

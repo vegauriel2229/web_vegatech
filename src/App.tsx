@@ -7,6 +7,7 @@ import { DiagnosticWizard } from "./components/DiagnosticWizard";
 import { Faq } from "./components/Faq";
 import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
+import { MobileNav } from "./components/MobileNav";
 import { Process } from "./components/Process";
 import { Services } from "./components/Services";
 import { Sidebar } from "./components/Sidebar";
@@ -22,7 +23,8 @@ export function App() {
     <>
       <StarField active reduceMotion={reduceMotion} />
       <Sidebar />
-      <main id="inicio" className="pl-16 md:pl-20">
+      <MobileNav />
+      <main id="inicio" className="pt-16 md:pl-20 md:pt-0">
         <Hero imageUrl={HERO_IMAGE_URL} onStartDiagnosis={() => setIsWizardOpen(true)} />
         <Marquee items={MARQUEE_SERVICES} />
         <Services />
@@ -31,7 +33,7 @@ export function App() {
         <Faq />
         <Contact />
       </main>
-      <SiteFooter className="pl-16 md:pl-20" />
+      <SiteFooter className="md:pl-20" />
       <WhatsAppFab />
       <DiagnosticWizard isOpen={isWizardOpen} onClose={() => setIsWizardOpen(false)} />
     </>

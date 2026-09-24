@@ -23,7 +23,9 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 16px;
+  /* Bajo md, la top bar fija de MobileNav (h-16) taparía el título de la sección destino: 64px + 16px de aire. */
+  scroll-padding-top: 80px;
+  @variant md { scroll-padding-top: 16px; }
   color-scheme: dark;
   /* Reserva el canal de la barra: al bloquear el scroll con el modal abierto, la página no salta de ancho. */
   scrollbar-gutter: stable;
@@ -32,6 +34,11 @@ html {
 /* <dialog> nativo no bloquea el scroll de fondo: se resuelve en CSS sin estado en JS. */
 html:has(dialog[open]) {
   overflow: hidden;
+}
+
+/* Mismo bloqueo para el cajón de MobileNav, acotado a < md: en md+ queda montado pero oculto y no debe trabar la página. */
+html:has([data-mobile-nav-drawer]) {
+  @variant max-md { overflow: hidden; }
 }
 
 body {
