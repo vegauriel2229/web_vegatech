@@ -13,7 +13,7 @@ import { Process } from "./components/Process";
 import { ScreenRepair } from "./components/ScreenRepair";
 import { Services } from "./components/Services";
 import { Sidebar } from "./components/Sidebar";
-import { SiteFooter, WhatsAppFab } from "./components/SiteChrome";
+import { LocalBusinessSchema, SiteFooter, WhatsAppFab } from "./components/SiteChrome";
 import { StarField } from "./components/StarField";
 import { HERO_IMAGE_URL, MARQUEE_SERVICES } from "./lib/content";
 
@@ -39,6 +39,7 @@ export function App() {
       </main>
       <SiteFooter className="md:pl-20" />
       <WhatsAppFab />
+      <LocalBusinessSchema />
       <DiagnosticWizard isOpen={isWizardOpen} onClose={() => setIsWizardOpen(false)} />
     </>
   );

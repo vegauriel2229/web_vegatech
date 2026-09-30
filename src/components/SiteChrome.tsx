@@ -1,8 +1,34 @@
 // src/components/SiteChrome.tsx
 import { cn } from "../lib/cn";
-import { WHATSAPP_URL } from "../lib/content";
+import {
+  HERO_IMAGE_URL, INSTAGRAM_URL, LOGO_URL, SCHEDULE, WHATSAPP_NUMBER, WHATSAPP_URL, WORKSHOP_AREA,
+} from "../lib/content";
+import { toSchemaOpeningHours } from "../lib/schedule";
 
 const WHATSAPP_FAB_HINT = "¿Urgencia? Hablanos";
+
+/**
+ * Ficha de negocio (schema.org) que Google usa para entender quién es, dónde atiende y en qué horario.
+ * Google lee el JSON-LD aunque lo inserte JavaScript; se arma acá para no duplicar los datos de content.ts.
+ */
+export function LocalBusinessSchema() {
+  const { origin } = window.location;
+  const business = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "VegaTech",
+    url: `${origin}/`,
+    logo: `${origin}${LOGO_URL}`,
+    image: `${origin}${HERO_IMAGE_URL}`,
+    telephone: `+${WHATSAPP_NUMBER}`,
+    // Sin calle: no hay local abierto al público (ver WORKSHOP_NOTE).
+    address: { "@type": "PostalAddress", addressLocality: "Godoy Cruz", addressRegion: "Mendoza", addressCountry: "AR" },
+    areaServed: WORKSHOP_AREA,
+    sameAs: [INSTAGRAM_URL],
+    openingHoursSpecification: toSchemaOpeningHours(SCHEDULE),
+  };
+  return <script type="application/ld+json">{JSON.stringify(business)}</script>;
+}
 
 export function SiteFooter({ className }: { className?: string }) {
   return (
