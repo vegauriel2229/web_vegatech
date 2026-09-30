@@ -65,6 +65,14 @@ export const STEPS: readonly TitledItem[] = [
   { icon: "check", title: "Reparamos y te avisamos", text: "Te mantenemos al tanto hasta que tu equipo esté listo." },
 ];
 
+// Una etapa por tramo de la animación de ScreenRepair: si cambia la cantidad, ajustar STEP_STARTS allá.
+export const REPAIR_STEPS: readonly TitledItem[] = [
+  { icon: "scan", title: "¿Se te rompió la pantalla?", text: "Vidrio astillado, manchas, líneas de colores o táctil que no responde." },
+  { icon: "wrench", title: "Abrimos el equipo", text: "Lo desarmamos con cuidado para llegar a la pantalla dañada." },
+  { icon: "screen", title: "Colocamos la pantalla nueva", text: "Cambiamos la pantalla y el táctil dañados." },
+  { icon: "check", title: "Como nuevo", text: "Te avisamos por WhatsApp apenas está listo." },
+];
+
 export const ABOUT_PARAGRAPHS: readonly string[] = [
   "Vegatech es un servicio técnico de celulares de Godoy Cruz, Mendoza. Estamos en etapa de crecimiento y trabajamos con un compromiso claro: un servicio serio, transparente y de confianza.",
   "La atención está a cargo de Uriel Vega, responsable de Vegatech, para que cada consulta tenga un trato directo y personalizado.",

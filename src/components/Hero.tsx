@@ -1,5 +1,5 @@
 // src/components/Hero.tsx
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowRight, Cpu } from "lucide-react";
 import { LOGO_URL, WHATSAPP_URL } from "../lib/content";
 import { CircuitButton } from "./CircuitButton";

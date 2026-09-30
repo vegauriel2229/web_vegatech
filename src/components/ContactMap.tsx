@@ -1,5 +1,5 @@
 // src/components/ContactMap.tsx
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants } from "motion/react";
 import { ExternalLink, Star } from "lucide-react";
 import { cn } from "../lib/cn";
 import {

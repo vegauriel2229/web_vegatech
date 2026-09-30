@@ -1,7 +1,7 @@
 // src/main.tsx
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { MotionConfig } from "framer-motion";
+import { MotionConfig } from "motion/react";
 import { App } from "./App";
 import "./index.css";
 

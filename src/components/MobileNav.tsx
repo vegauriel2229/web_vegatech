@@ -1,6 +1,6 @@
 // src/components/MobileNav.tsx
 import { useEffect, useId, useRef, useState, type FocusEvent } from "react";
-import { AnimatePresence, motion, type Transition } from "framer-motion";
+import { AnimatePresence, motion, type Transition } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../lib/content";
 import { ICONS } from "./Icon";

@@ -1,6 +1,6 @@
 // src/components/Process.tsx
 import { useRef } from "react";
-import { motion, useInView, type Variants } from "framer-motion";
+import { motion, useInView, type Variants } from "motion/react";
 import { STEPS } from "../lib/content";
 import { IconBadge } from "./Icon";
 import { Section } from "./Section";

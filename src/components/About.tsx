@@ -6,7 +6,7 @@ import { Section, cardSurface } from "./Section";
 
 export function About() {
   return (
-    <Section id="sobre-nosotros" title="Sobre nosotros">
+    <Section id="sobre-nosotros" title="Sobre nosotros" reveal>
       <div className="grid items-start gap-8 md:grid-cols-[1.3fr_1fr]">
         <div className="space-y-4 text-slate-400">
           {ABOUT_PARAGRAPHS.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}

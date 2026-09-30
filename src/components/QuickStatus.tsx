@@ -1,6 +1,6 @@
 // src/components/QuickStatus.tsx
 import { useEffect, useState, type PointerEvent as ReactPointerEvent } from "react";
-import { motion, useReducedMotion, useSpring } from "framer-motion";
+import { motion, useReducedMotion, useSpring } from "motion/react";
 import { Clock } from "lucide-react";
 import { cn } from "../lib/cn";
 import { BUSINESS_TIME_ZONE, INSTAGRAM_HANDLE, INSTAGRAM_URL, SCHEDULE } from "../lib/content";

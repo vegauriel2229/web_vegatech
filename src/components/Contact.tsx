@@ -1,5 +1,5 @@
 // src/components/Contact.tsx
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { CONTACT_INFO, CONTACT_INTRO, WHATSAPP_URL } from "../lib/content";
 import { cn } from "../lib/cn";
 import { IconBadge } from "./Icon";
@@ -7,7 +7,7 @@ import { Section, cardSurface } from "./Section";
 
 export function Contact() {
   return (
-    <Section id="contacto" title="Contacto" intro={CONTACT_INTRO}>
+    <Section id="contacto" title="Contacto" intro={CONTACT_INTRO} reveal>
       <div className="grid gap-4 md:grid-cols-2">
         <dl className="grid gap-4 sm:grid-cols-2">
           {CONTACT_INFO.map(({ icon, label, lines, href }) => (

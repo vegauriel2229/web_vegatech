@@ -5,7 +5,7 @@ import { Section } from "./Section";
 
 export function Faq() {
   return (
-    <Section id="faq" title="Preguntas frecuentes" className="max-w-[820px]">
+    <Section id="faq" title="Preguntas frecuentes" className="max-w-[820px]" reveal>
       <div className="space-y-3">
         {FAQ.map(({ question, answer }) => (
           <details

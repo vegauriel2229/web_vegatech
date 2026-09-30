@@ -1,6 +1,6 @@
 // src/App.tsx
 import { useState } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "motion/react";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { ContactMap } from "./components/ContactMap";
@@ -10,6 +10,7 @@ import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
 import { MobileNav } from "./components/MobileNav";
 import { Process } from "./components/Process";
+import { ScreenRepair } from "./components/ScreenRepair";
 import { Services } from "./components/Services";
 import { Sidebar } from "./components/Sidebar";
 import { SiteFooter, WhatsAppFab } from "./components/SiteChrome";
@@ -29,6 +30,7 @@ export function App() {
         <Hero imageUrl={HERO_IMAGE_URL} onStartDiagnosis={() => setIsWizardOpen(true)} />
         <Marquee items={MARQUEE_SERVICES} />
         <Services />
+        <ScreenRepair />
         <Process />
         <About />
         <Faq />

@@ -3,7 +3,7 @@ import {
   useId, useLayoutEffect, useRef, useState,
   type FormEvent, type MouseEvent, type ReactNode, type SyntheticEvent,
 } from "react";
-import { AnimatePresence, motion, type Transition, type Variants } from "framer-motion";
+import { AnimatePresence, motion, type Transition, type Variants } from "motion/react";
 import {
   ArrowLeft, BatteryWarning, Bug, CircleHelp, Cpu, MessageCircle, MonitorX, Pencil, PowerOff, Smartphone, X,
 } from "lucide-react";
